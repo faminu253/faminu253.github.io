@@ -1,1 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Farida Aminu | Data Analyst & Data Scientist</title>
+
+    <meta name="description"
+          content="Portfolio of Farida Aminu, a Data Analyst and Data Scientist specializing in Python, SQL, Power BI, MongoDB, data visualization and machine learning.">
+
+    <style>
+        /* =========================
+           GENERAL
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: #f8fafc;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
+        nav {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #374151;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(
+                135deg,
+                #eff6ff,
+                #ffffff
+            );
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            color: #111827;
+        }
+
+        .hero h1 span {
+            color: #2563eb;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            color: #4b5563;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #6b7280;
+            max-width: 650px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            border: 2px solid #2563eb;
+            color: #2563eb;
+            background: white;
+        }
+
+        .btn-secondary:hover {
+            background: #eff6ff;
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================== */
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: #111827;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #6b7280;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            color: #4b5563;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================== */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(220px, 1fr)
+            );
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(
+                0,
+                0,
+                0,
+                0.08
+            );
+        }
+
+        .skill-card h3 {
+            margin-bottom: 10px;
+            color: #2563eb;
+        }
+
+        .skill-card p {
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================== */
+
+        .projects {
+            background: white;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(280px, 1fr)
+            );
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #f8fafc;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(
+                0,
+                0,
+                0,
+                0.08
+            );
+        }
+
+        .project-card h3 {
+            color: #111827;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: #6b7280;
+            margin-bottom: 15px;
+        }
+
+        .tools {
+            font-size: 0.85rem;
+            color: #2563eb;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: #6b7280;
+            margin-bottom: 25px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background: #111827;
+            color: #d1d5db;
+            text-align: center;
+            padding: 25px;
+            font-size: 0.9rem;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 768px) {
+
+            .nav-container {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                min-height: 75vh;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.25rem;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <nav>
+        <div class="container nav-container">
+
+            <div class="logo">
+                Farida Aminu
+            </div>
+
+            <ul class="nav-links">
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <header class="hero">
+
+        <div class="container">
+
+            <div class="hero-content">
+
+                <h1>
+                    Hi, I'm <span>Farida Aminu</span>
+                </h1>
+
+                <h2>
+                    Data Analyst & Data Scientist
+                </h2>
+
+                <p>
+                    I transform data into meaningful insights through
+                    data analysis, visualization, statistical techniques,
+                    and machine learning.
+                </p>
+
+                <div class="buttons">
+
+                    <a
+                        href="#projects"
+                        class="btn btn-primary"
+                    >
+                        View My Projects
+                    </a>
+
+                    <a
+                        href="https://github.com/faminu253"
+                        target="_blank"
+                        class="btn btn-secondary"
+                    >
+                        GitHub Profile
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section id="about" class="about">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>About Me</h2>
+                <p>Turning data into actionable insights</p>
+            </div>
+
+            <div class="about-content">
+
+                <p>
+                    I am a data professional passionate about
+                    understanding data, discovering patterns,
+                    and using analytical techniques to solve
+                    real-world problems.
+                </p>
+
+                <p>
+                    My work involves data cleaning, exploratory
+                    data analysis, visualization, SQL querying,
+                    statistical analysis, and machine learning.
+                </p>
+
+                <p>
+                    I enjoy working with Python, SQL, Power BI,
+                    MongoDB, and Jupyter Notebook to transform
+                    raw data into useful information.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
+    <section id="skills">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Skills & Tools</h2>
+
+                <p>
+                    Technologies I use for data analysis
+                    and data science
+                </p>
+
+            </div>
+
+
+            <div class="skills-grid">
+
+                <div class="skill-card">
+
+                    <h3>Python</h3>
+
+                    <p>
+                        Pandas, NumPy, Matplotlib, Plotly,
+                        Scikit-learn and Jupyter Notebook.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <h3>SQL</h3>
+
+                    <p>
+                        Data querying, filtering,
+                        aggregation, joins and database analysis.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <h3>Power BI</h3>
+
+                    <p>
+                        Interactive dashboards, data visualization
+                        and business intelligence.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <h3>Machine Learning</h3>
+
+                    <p>
+                        Regression, classification,
+                        feature engineering and model evaluation.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <h3>MongoDB</h3>
+
+                    <p>
+                        Working with NoSQL databases,
+                        documents and data extraction.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <h3>Data Analysis</h3>
+
+                    <p>
+                        Data cleaning, exploratory analysis,
+                        statistics and visualization.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+
+    <section id="projects" class="projects">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Featured Projects</h2>
+
+                <p>
+                    A selection of my data analysis
+                    and machine learning work
+                </p>
+
+            </div>
+
+
+            <div class="project-grid">
+
+
+                <!-- PROJECT 1 -->
+
+                <div class="project-card">
+
+                    <h3>
+                        Housing Price Analysis
+                    </h3>
+
+                    <p>
+                        Exploratory data analysis and
+                        machine learning for understanding
+                        and predicting housing prices.
+                    </p>
+
+                    <div class="tools">
+                        Python • Pandas • Scikit-learn
+                    </div>
+
+                    <a
+                        href="https://github.com/faminu253"
+                        target="_blank"
+                        class="project-link"
+                    >
+                        View Project →
+                    </a>
+
+                </div>
+
+
+                <!-- PROJECT 2 -->
+
+                <div class="project-card">
+
+                    <h3>
+                        Bankruptcy Classification
+                    </h3>
+
+                    <p>
+                        A machine learning classification
+                        project involving imbalanced data,
+                        model evaluation and prediction.
+                    </p>
+
+                    <div class="tools">
+                        Python • Scikit-learn • ML
+                    </div>
+
+                    <a
+                        href="https://github.com/faminu253"
+                        target="_blank"
+                        class="project-link"
+                    >
+                        View Project →
+                    </a>
+
+                </div>
+
+
+                <!-- PROJECT 3 -->
+
+                <div class="project-card">
+
+                    <h3>
+                        Air Quality Analysis
+                    </h3>
+
+                    <p>
+                        Analysis of air-quality data using
+                        data cleaning, visualization and
+                        time-series techniques.
+                    </p>
+
+                    <div class="tools">
+                        Python • Pandas • Matplotlib
+                    </div>
+
+                    <a
+                        href="https://github.com/faminu253"
+                        target="_blank"
+                        class="project-link"
+                    >
+                        View Project →
+                    </a>
+
+                </div>
+
+
+                <!-- PROJECT 4 -->
+
+                <div class="project-card">
+
+                    <h3>
+                        Superstore Sales Dashboard
+                    </h3>
+
+                    <p>
+                        Interactive business dashboard
+                        designed to analyze sales,
+                        profitability and business performance.
+                    </p>
+
+                    <div class="tools">
+                        Power BI • DAX • Data Visualization
+                    </div>
+
+                    <a
+                        href="https://github.com/faminu253"
+                        target="_blank"
+                        class="project-link"
+                    >
+                        View Project →
+                    </a>
+
+                </div>
+
+
+                <!-- PROJECT 5 -->
+
+                <div class="project-card">
+
+                    <h3>
+                        SQL Data Analysis
+                    </h3>
+
+                    <p>
+                        Database analysis using SQL queries,
+                        filtering, aggregation, grouping,
+                        joins and analytical functions.
+                    </p>
+
+                    <div class="tools">
+                        SQL • SQLite • DuckDB
+                    </div>
+
+                    <a
+                        href="https://github.com/faminu253"
+                        target="_blank"
+                        class="project-link"
+                    >
+                        View Project →
+                    </a>
+
+                </div>
+
+
+                <!-- PROJECT 6 -->
+
+                <div class="project-card">
+
+                    <h3>
+                        MongoDB Data Analysis
+                    </h3>
+
+                    <p>
+                        Working with document-based data
+                        using MongoDB and Python for
+                        extraction and analysis.
+                    </p>
+
+                    <div class="tools">
+                        MongoDB • Python •
